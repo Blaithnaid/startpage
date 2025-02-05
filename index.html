@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Home</title>
+		<script src="https://cdn.tailwindcss.com"></script>
+		<script>
+			tailwind.config = {
+				theme: {
+					extend: {
+						colors: {
+							background: "#0C171D",
+						},
+						fontFamily: {
+							sans: ["Inter", "sans-serif"],
+							mono: ["Fira Code", "monospace"],
+						},
+					},
+				},
+			};
+		</script>
+		<script type="module">
+			const images = [
+				"./assets/1.jpeg",
+				"./assets/2.jpeg",
+				"./assets/3.jpeg",
+				"./assets/4.jpeg",
+				"./assets/5.jpeg",
+				"./assets/6.jpeg",
+				"./assets/7.jpeg",
+				"./assets/8.jpeg",
+				"./assets/9.jpeg",
+				"./assets/10.jpeg",
+				"./assets/11.jpeg",
+			];
+			const links = [
+				{
+					title: "github",
+					url: "https://github.com",
+					color: "blue-500",
+				},
+				{
+					title: "gitlab",
+					url: "https://gitlab.com",
+					color: "red-500",
+				},
+				{
+					title: "reddit",
+					url: "https://reddit.com",
+					color: "orange-500",
+				},
+				{
+					title: "youtube",
+					url: "https://youtube.com",
+					color: "red-500",
+				},
+				{
+					title: "twitter",
+					url: "https://twitter.com",
+					color: "blue-400",
+				},
+				{
+					title: "discord",
+					url: "https://discord.com",
+					color: "blue-500",
+				},
+				{
+					title: "last.fm",
+					url: "https://last.fm",
+					color: "red-500",
+				},
+				{
+					title: "stackoverflow",
+					url: "https://stackoverflow.com",
+					color: "orange-500",
+				},
+			];
+			const searchoptions = [
+				{
+					title: "wikipedia",
+					url: "https://en.wikipedia.org/w/index.php?title=Special:Search&search=%s",
+				},
+				{
+					title: "letterboxd",
+					url: "https://letterboxd.com/search/%s",
+				},
+				{
+					title: "rateyourmusic",
+					url: "https://rateyourmusic.com/search?searchterm=%s",
+				},
+				{
+					title: "duckduckgo",
+					url: "https://duckduckgo.com/?q=%s",
+				},
+				{
+					title: "google",
+					url: "https://www.google.com/search?q=%s",
+				},
+			];
+			const input = document.querySelector("input");
+
+			const img = document.querySelector("img");
+			img.src = images[Math.floor(Math.random() * images.length)];
+
+			const grid = document.querySelector(".grid");
+			links.forEach((link) => {
+				const a = document.createElement("a");
+				a.href = link.url;
+				a.target = "_blank";
+				a.rel = "noopener noreferrer";
+				a.classList.add(
+					"flex",
+					"items-center",
+					"justify-center",
+					"hover:bg-slate-800",
+					"border",
+					"border-white",
+					"py-3",
+					"px-3",
+					"font-mono",
+					"text-lg",
+					"hover:shadow-lg",
+					`text-${link.color}`
+				);
+				a.textContent = link.title;
+				grid.appendChild(a);
+			});
+		</script>
+		<link
+			href="https://fonts.googleapis.com/css2?family=Inter&family=Fira+Code&display=swap"
+			rel="stylesheet"
+		/>
+	</head>
+	<body class="h-screen w-screen bg-background">
+		<div class="h-full w-full flex items-center justify-center gap-2">
+			<div
+				class="h-full w-max-content flex flex-col items-center justify-center"
+			>
+				<div class="text-white font-mono text-4xl">START</div>
+				<div class="h-0.5 w-1/3 bg-white mt-4 mb-5"></div>
+				<img class="h-3/4 w-auto" />
+			</div>
+			<div class="h-full w-1/3 flex items-center justify-center">
+				<div
+					class="h-full flex flex-col items-center justify-center text-white font-bold"
+				>
+					<div class="grid grid-cols-2 gap-4"></div>
+					<div class="w-full mt-12">
+						<input
+							type="text"
+							class="w-full border p-2 border-white bg-gray-800"
+						/>
+					</div>
+				</div>
+			</div>
+		</div>
+	</body>
+</html>
