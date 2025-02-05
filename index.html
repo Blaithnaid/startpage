@@ -42,14 +42,9 @@
 					color: "blue-500",
 				},
 				{
-					title: "gitlab",
-					url: "https://gitlab.com",
-					color: "red-500",
-				},
-				{
-					title: "reddit",
-					url: "https://reddit.com",
-					color: "orange-500",
+					title: "moodle",
+					url: "https://vlegalwaymayo.atu.ie",
+					color: "teal-600",
 				},
 				{
 					title: "youtube",
@@ -57,14 +52,14 @@
 					color: "red-500",
 				},
 				{
-					title: "twitter",
-					url: "https://twitter.com",
-					color: "blue-400",
+					title: "coolors",
+					url: "https://coolors.co/generate",
+					color: "blue-600",
 				},
 				{
 					title: "firebase",
-					url: "console.firebase.google.com",
-					color: "blue-500",
+					url: "https://console.firebase.google.com",
+					color: "orange-400",
 				},
 				{
 					title: "last.fm",
@@ -75,6 +70,11 @@
 					title: "stackoverflow",
 					url: "https://stackoverflow.com",
 					color: "orange-500",
+				},
+				{
+					title: "nyt games",
+					url: "https://www.nytimes.com/games",
+					color: "blue-500",
 				},
 			];
 			const searchoptions = [
@@ -127,6 +127,13 @@
 				a.textContent = link.title;
 				grid.appendChild(a);
 			});
+
+			const form = document.querySelector("form");
+			form.addEventListener("submit", (e) => {
+				e.preventDefault();
+				const val = input.value;
+				window.location = searchoptions[0].url.replace("%s", val);
+			});
 		</script>
 		<link
 			href="https://fonts.googleapis.com/css2?family=Inter&family=Fira+Code&display=swap"
@@ -148,11 +155,15 @@
 				>
 					<div class="grid grid-cols-2 gap-4"></div>
 					<div class="w-full mt-12">
-						<input
-							type="text"
-							placeholder="search..."
-							class="w-full border p-2 border-white bg-gray-800 text-white"
-						/>
+						<form>
+							<input
+								id="searchInput"
+								type="text"
+								placeholder="search..."
+								class="w-full border p-2 border-white bg-gray-800 text-white"
+							/>
+							<input type="submit" />
+						</form>
 					</div>
 				</div>
 			</div>
