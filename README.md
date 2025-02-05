@@ -11,4 +11,3 @@
     -   https://docs.expo.dev/
     -   https://reactnative.dev/docs/components-and-apis/
     -   https://fonts.google.com/
-    -
