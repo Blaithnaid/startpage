@@ -107,7 +107,7 @@
 			links.forEach((link) => {
 				const a = document.createElement("a");
 				a.href = link.url;
-				a.target = "_blank";
+				a.target = "_top";
 				a.rel = "noopener noreferrer";
 				a.classList.add(
 					"flex",
@@ -149,7 +149,8 @@
 					<div class="w-full mt-12">
 						<input
 							type="text"
-							class="w-full border p-2 border-white bg-gray-800"
+							placeholder="search..."
+							class="w-full border p-2 border-white bg-gray-800 text-white"
 						/>
 					</div>
 				</div>
